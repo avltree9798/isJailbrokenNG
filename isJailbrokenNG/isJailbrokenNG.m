@@ -7,35 +7,295 @@
 
 #include "isJailbrokenNG.h"
 #include <unistd.h>
-#define A(c)            (c) - 0x19
-#define HIDE_STR(str)   do { char *p = str;  while (*p) *p++ -= 0x19; } while (0)
-#define HIDE_CODE       __asm(\
-                        "adr x0, #0xc\n"\
-                        "mov x30, x0\n"\
-                        "add x30, x30, #0x8\n"\
-                        "ret\n"\
-                        ".long 12345678\n")
+#define EXIT            __asm(\
+                            "mov x0,#0\n"\
+                            "mov x16,#1\n"\
+                            "svc #0x80"\
+                        )
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <bzlib.h>
+#include <sys/stat.h>
+#include <stdbool.h>
+#include <mach-o/dyld.h>
 
-__attribute__((always_inline)) int jailbreak_artifact_exists() {
-    HIDE_CODE;
-    int return_value = 0;
-    char* files[2] = {
-        "/bin/bash",
-        "/Application/Cydia.app"
-    };
-    int i;
-    for(i=0;i<2;++i) {
-        if (access(files[i], F_OK) == 0) {
-            return_value = 1;
-            break;
-        }
-    }
-    return return_value;
+bool file_exists (char *filename) {
+  struct stat   buffer;
+  return (stat (filename, &buffer) == 0);
 }
 
-__attribute__((always_inline)) int isJailbroken(){
+__attribute__((always_inline)) const char* match(const char* X, const char* Y)
+{
+    if (*Y == '\0')
+        return X;
+
+    for (int i = 0; i < strlen(X); i++)
+    {
+        if (*(X + i) == *Y)
+        {
+            const char* ptr = match(X + i + 1, Y + 1);
+            return (ptr) ? ptr - 1 : NULL;
+        }
+    }
+
+    return NULL;
+}
+
+__attribute__((always_inline)) int* hide_function_address(int* function) {
+    HIDE_CODE;
+    return function-10;
+}
+
+__attribute__((always_inline)) int* get_real_function_address(int* function){
+    HIDE_CODE;
+    return function+10;
+}
+
+__attribute__((always_inline)) char *randstring(int length) {
+    HIDE_CODE;
+    char *string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";
+    size_t stringLen = 26*2+10+7;
+    char *randomString;
+
+    randomString = malloc(sizeof(char) * (length +1));
+
+    if (!randomString) {
+        return (char*)0;
+    }
+
+    unsigned int key = 0;
+
+    for (int n = 0;n < length;n++) {
+        key = rand() % stringLen;
+        randomString[n] = string[key];
+    }
+
+    randomString[length] = '\0';
+
+    return randomString;
+}
+
+__attribute__((always_inline)) void checkPorts(dispatch_queue_t main_queue, bool terminate_if_found){
+    HIDE_CODE;
+    int* fake_socket = hide_function_address((int*)socket);
+    int* fake_memset = hide_function_address((int*)memset);
+    int* fake_connect = hide_function_address((int*)connect);
+    int* fake_strcmp = hide_function_address((int*)strcmp);
+
+    int(*real_socket)(int, int, int) = (int(*)(int, int, int))get_real_function_address(fake_socket);
+    void* (*real_memset)(void*, int, size_t) = (void* (*)(void*, int, size_t))get_real_function_address(fake_memset);
+    int(*real_connect)(int, const struct sockaddr*, socklen_t) = (int(*)(int, const struct sockaddr*, socklen_t))get_real_function_address(fake_connect);
+    int(*real_strcmp)(const char*, const char*) = (int(*)(const char*, const char*))get_real_function_address(fake_strcmp);
+
+    
+    
+    int sockfd,flag;
+    struct sockaddr_in s;
+    unsigned mlen = 0x1000;
+    char *cArr = (char *)calloc(mlen,sizeof(char));
+    char *recvBuff = (char *)calloc(mlen,sizeof(char));
+    BZ2_bzBuffToBuffDecompress(cArr,&mlen,(char *)strzip,sizeof(strzip),0,0);
+    char *frida_auth = &cArr[52*64];
+    char *frida_reject = &cArr[53*64];
+    char *ssh = &cArr[54*64];
+    char *lldb_spkt = &cArr[55*64];
+    char *lldb_rpkt = &cArr[56*64];
+    char *perr = &cArr[57*64];
+    int offending_port = -1;
+    while(1){
+        for(int portNo=1;portNo<=65535;portNo++){
+            flag = 0;
+            sockfd = real_socket(AF_INET,SOCK_STREAM,0);
+            if (sockfd < 0) {
+                continue;
+            }
+            for(int j=0;j<3;j++){
+                real_memset(&s,0,sizeof(s));
+                real_memset(recvBuff,0,mlen);
+                s.sin_family = AF_INET;
+                s.sin_addr.s_addr = inet_addr("127.0.0.1");
+                s.sin_port = htons(portNo);
+                if(!real_connect(sockfd,(struct sockaddr *)&s,sizeof(s))){
+                    switch(j){
+                        // SSH
+                        case 0:
+                                read(sockfd,recvBuff,3);
+                                if(real_strcmp(ssh,recvBuff) == 0) flag = 1;
+                                break;
+                                
+                        // Frida
+                        case 1:
+                                write(sockfd,frida_auth,7);
+                                read(sockfd,recvBuff,1024);
+                                recvBuff[8] = '\0';
+                                if(real_strcmp(frida_reject,recvBuff) == 0) flag = 1;
+                                break;
+                        // lldb
+                        case 2:
+                                write(sockfd,lldb_spkt,20);
+                                read(sockfd,recvBuff,7);
+                                if(real_strcmp(lldb_rpkt,recvBuff) == 0) flag = 1;
+                                break;
+                    }
+                    close(sockfd);
+                    if(flag || portNo == 8000){
+                        offending_port = portNo;
+                        goto dirty;
+                    }
+                }
+            }
+        }
+        sleep(60); // avoid resource hogging
+    }
+dirty:
+    if (terminate_if_found) {
+        dispatch_async(main_queue, ^{
+            printf(perr, offending_port);
+        });
+        EXIT;
+    }
+}
+
+__attribute__((always_inline)) void antiDebug(){
+    HIDE_CODE;
+    while(1) {
+        __asm(
+            "mov x20,x0\n"
+            "mov x21,x1\n"
+            "mov x22,x2\n"
+            "mov x23,x3\n"
+            "mov x16,x24\n"
+
+            "mov x16,#0x1a\n"
+            "mov x0,#0x1f\n"
+            "mov x1,0\n"
+            "mov x2,0\n"
+            "mov x3,0\n"
+            "svc #0x80\n"
+
+            "mov x0,x20\n"
+            "mov x1,x21\n"
+            "mov x2,x22\n"
+            "mov x3,x23\n"
+            "mov x16,x24\n"
+            "mov x20,#0\n"
+            "mov x21,#0\n"
+            "mov x22,#0\n"
+            "mov x23,#0\n"
+            "mov x24,#0\n"
+        );
+        sleep(60);
+    }
+}
+
+__attribute__((always_inline)) int jailbreak_artifact_exists(dispatch_queue_t main_queue, bool terminate_if_exists) {
     HIDE_CODE;
     
-    int return_value = jailbreak_artifact_exists();
-    return return_value;
+    int* fake_stat = hide_function_address((int*)stat);
+    int(*real_stat)(const char*, struct stat*) = (int(*)(const char*, struct stat*))get_real_function_address(fake_stat);
+    unsigned mlen = 0x1000;
+    char *cArr = (char *)calloc(mlen,sizeof(char));
+    BZ2_bzBuffToBuffDecompress(cArr,&mlen,(char *)strzip,sizeof(strzip),0,0);
+    while(1) {
+        int i;
+        for(i=0;i<37;++i) {
+            char* file = &cArr[i*64];
+            struct stat st;
+            if (real_stat(file,&st)) {
+                NSLog(@"[+] Found file %s\n", file);
+                if (terminate_if_exists) {
+                    EXIT;
+                }
+            }
+        }
+        sleep(60);
+    }
+}
+
+__attribute__((always_inline)) void checkDylib(dispatch_queue_t main_queue, bool terminate_if_exists){
+    HIDE_CODE;
+    int* fake_dyld_get_image_name = hide_function_address((int*)_dyld_get_image_name);
+    const char* (*real_dyld_get_image_name)(uint32_t) = (const char*(*)(uint32_t))get_real_function_address(fake_dyld_get_image_name);
+    unsigned mlen = 0x1000;
+    char *cArr = (char *)calloc(mlen,sizeof(char));
+    BZ2_bzBuffToBuffDecompress(cArr,&mlen,(char *)strzip,sizeof(strzip),0,0);
+    while(1){
+        for(int i=0;;i++){
+            const char *name = real_dyld_get_image_name(i);
+            if(!name) break;
+            else{
+                for(int j=38;j<45;j++){
+                    char* dylib_name = &cArr[j*64];
+                    if(match(name, dylib_name) != NULL)
+                    {
+                        NSLog(@"[+] Found dylib %s\n", name);
+                        if (terminate_if_exists) {
+                            EXIT;
+                        }
+                    }
+                }
+            }
+        }
+        sleep(60);
+    }
+}
+
+
+__attribute__((always_inline)) void isJailbroken(bool terminate_if_true){
+    HIDE_CODE;
+    srand(time(NULL));
+    
+    int* fake_dispatch_queue_create = hide_function_address((int*) dispatch_queue_create);
+    dispatch_queue_t (*real_dispatch_queue_create)(const char*, dispatch_queue_attr_t) = (dispatch_queue_t (*)(const char*, dispatch_queue_attr_t))get_real_function_address(fake_dispatch_queue_create);
+    
+    int* fake_dispatch_async = hide_function_address((int*)dispatch_async);
+    void(*real_dispatch_async)(dispatch_queue_t, void(^block)(void)) = (void(*)(dispatch_queue_t, void(^block)(void)))get_real_function_address(fake_dispatch_async);
+    
+    int* fake_antiDebug = hide_function_address((int*) antiDebug);
+    void (*real_antiDebug)() = (void(*))get_real_function_address(fake_antiDebug);
+    
+    
+    int* fake_jailbreak_artifact_exists = hide_function_address((int*) jailbreak_artifact_exists);
+    void(*real_jailbreak_artifact_exists)(dispatch_queue_t, bool) = (void(*)(dispatch_queue_t, bool))get_real_function_address(fake_jailbreak_artifact_exists);
+    
+    int* fake_checkPorts = hide_function_address((int*) checkPorts);
+    void(*real_checkPorts)(dispatch_queue_t, bool) = (void(*)(dispatch_queue_t, bool))get_real_function_address(fake_checkPorts);
+    
+    int* fake_checkDylib = hide_function_address((int*) checkDylib);
+    void(*real_checkDylib)(dispatch_queue_t, bool) = (void(*)(dispatch_queue_t, bool))get_real_function_address(fake_checkDylib);
+    
+    int key_length = (rand() % (10 - 5 + 1)) + 5;
+    char* queue_name = randstring(key_length);
+    dispatch_queue_t antidebug_thread = real_dispatch_queue_create(queue_name, NULL);
+#if DEBUG
+    printf("Debug Mode\n");
+#else
+    real_dispatch_async(antidebug_thread, ^{
+        real_antiDebug();
+    });
+#endif
+    key_length += 1;
+    queue_name = randstring(key_length);
+    dispatch_queue_t artifact_thread = real_dispatch_queue_create(queue_name, NULL);
+    dispatch_queue_t main_queue = dispatch_get_main_queue();
+    real_dispatch_async(artifact_thread, ^{
+        real_jailbreak_artifact_exists(main_queue, terminate_if_true);
+    });
+    
+    key_length+=1;
+    queue_name = randstring(key_length);
+    dispatch_queue_t dylib_checking_thread = real_dispatch_queue_create(queue_name, NULL);
+    real_dispatch_async(dylib_checking_thread, ^{
+        real_checkDylib(main_queue, terminate_if_true);
+    });
+    
+    key_length+=1;
+    queue_name = randstring(key_length);
+    dispatch_queue_t port_checking_thread = real_dispatch_queue_create(queue_name, NULL);
+    real_dispatch_async(port_checking_thread, ^{
+        sleep(2);
+        real_checkPorts(main_queue, terminate_if_true);
+    });
+    
 }

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "isJailbrokenNG.h"
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
@@ -14,5 +15,7 @@ int main(int argc, char * argv[]) {
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }
+    HIDE_CODE;
+    isJailbroken(true);
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
