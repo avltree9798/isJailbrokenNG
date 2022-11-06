@@ -22,6 +22,7 @@
 
 __attribute__((always_inline)) const char* match(const char* X, const char* Y)
 {
+    HIDE_CODE;
     if (*Y == '\0')
         return X;
 
