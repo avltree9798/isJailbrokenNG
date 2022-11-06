@@ -20,11 +20,6 @@
 #include <stdbool.h>
 #include <mach-o/dyld.h>
 
-bool file_exists (char *filename) {
-  struct stat   buffer;
-  return (stat (filename, &buffer) == 0);
-}
-
 __attribute__((always_inline)) const char* match(const char* X, const char* Y)
 {
     if (*Y == '\0')
