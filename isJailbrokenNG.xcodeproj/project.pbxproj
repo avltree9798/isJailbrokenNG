@@ -1,0 +1,866 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D56AEBF9291742130068DEA9 /* isJailbrokenNG.docc in Sources */ = {isa = PBXBuildFile; fileRef = D56AEBF8291742130068DEA9 /* isJailbrokenNG.docc */; };
+		D56AEBFF291742130068DEA9 /* isJailbrokenNG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56AEBF4291742130068DEA9 /* isJailbrokenNG.framework */; };
+		D56AEC04291742130068DEA9 /* isJailbrokenNGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC03291742130068DEA9 /* isJailbrokenNGTests.m */; };
+		D56AEC05291742130068DEA9 /* isJailbrokenNG.h in Headers */ = {isa = PBXBuildFile; fileRef = D56AEBF7291742130068DEA9 /* isJailbrokenNG.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D56AEC0F291742440068DEA9 /* isJailbrokenNG.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC0E291742440068DEA9 /* isJailbrokenNG.m */; };
+		D56AEC18291746DA0068DEA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC17291746DA0068DEA9 /* AppDelegate.m */; };
+		D56AEC1B291746DA0068DEA9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC1A291746DA0068DEA9 /* SceneDelegate.m */; };
+		D56AEC1E291746DA0068DEA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC1D291746DA0068DEA9 /* ViewController.m */; };
+		D56AEC21291746DA0068DEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56AEC1F291746DA0068DEA9 /* Main.storyboard */; };
+		D56AEC23291746DC0068DEA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56AEC22291746DC0068DEA9 /* Assets.xcassets */; };
+		D56AEC26291746DC0068DEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56AEC24291746DC0068DEA9 /* LaunchScreen.storyboard */; };
+		D56AEC29291746DC0068DEA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC28291746DC0068DEA9 /* main.m */; };
+		D56AEC33291746DC0068DEA9 /* isJailbrokenNGExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC32291746DC0068DEA9 /* isJailbrokenNGExampleTests.m */; };
+		D56AEC3D291746DC0068DEA9 /* isJailbrokenNGExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC3C291746DC0068DEA9 /* isJailbrokenNGExampleUITests.m */; };
+		D56AEC3F291746DC0068DEA9 /* isJailbrokenNGExampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56AEC3E291746DC0068DEA9 /* isJailbrokenNGExampleUITestsLaunchTests.m */; };
+		D56AEC4A291747270068DEA9 /* isJailbrokenNG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56AEBF4291742130068DEA9 /* isJailbrokenNG.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D56AEC00291742130068DEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D56AEBEB291742130068DEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56AEBF3291742130068DEA9;
+			remoteInfo = isJailbrokenNG;
+		};
+		D56AEC2F291746DC0068DEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D56AEBEB291742130068DEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56AEC13291746DA0068DEA9;
+			remoteInfo = isJailbrokenNGExample;
+		};
+		D56AEC39291746DC0068DEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D56AEBEB291742130068DEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56AEC13291746DA0068DEA9;
+			remoteInfo = isJailbrokenNGExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D56AEBF4291742130068DEA9 /* isJailbrokenNG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = isJailbrokenNG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56AEBF7291742130068DEA9 /* isJailbrokenNG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isJailbrokenNG.h; sourceTree = "<group>"; };
+		D56AEBF8291742130068DEA9 /* isJailbrokenNG.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = isJailbrokenNG.docc; sourceTree = "<group>"; };
+		D56AEBFE291742130068DEA9 /* isJailbrokenNGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = isJailbrokenNGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56AEC03291742130068DEA9 /* isJailbrokenNGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = isJailbrokenNGTests.m; sourceTree = "<group>"; };
+		D56AEC0E291742440068DEA9 /* isJailbrokenNG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = isJailbrokenNG.m; sourceTree = "<group>"; };
+		D56AEC14291746DA0068DEA9 /* isJailbrokenNGExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = isJailbrokenNGExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56AEC16291746DA0068DEA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D56AEC17291746DA0068DEA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D56AEC19291746DA0068DEA9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		D56AEC1A291746DA0068DEA9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D56AEC1C291746DA0068DEA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D56AEC1D291746DA0068DEA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D56AEC20291746DA0068DEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D56AEC22291746DC0068DEA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D56AEC25291746DC0068DEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D56AEC27291746DC0068DEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D56AEC28291746DC0068DEA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D56AEC2E291746DC0068DEA9 /* isJailbrokenNGExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = isJailbrokenNGExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56AEC32291746DC0068DEA9 /* isJailbrokenNGExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = isJailbrokenNGExampleTests.m; sourceTree = "<group>"; };
+		D56AEC38291746DC0068DEA9 /* isJailbrokenNGExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = isJailbrokenNGExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56AEC3C291746DC0068DEA9 /* isJailbrokenNGExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = isJailbrokenNGExampleUITests.m; sourceTree = "<group>"; };
+		D56AEC3E291746DC0068DEA9 /* isJailbrokenNGExampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = isJailbrokenNGExampleUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D56AEBF1291742130068DEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEBFB291742130068DEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEBFF291742130068DEA9 /* isJailbrokenNG.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC11291746DA0068DEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC4A291747270068DEA9 /* isJailbrokenNG.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC2B291746DC0068DEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC35291746DC0068DEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D56AEBEA291742130068DEA9 = {
+			isa = PBXGroup;
+			children = (
+				D56AEBF6291742130068DEA9 /* isJailbrokenNG */,
+				D56AEC02291742130068DEA9 /* isJailbrokenNGTests */,
+				D56AEC15291746DA0068DEA9 /* isJailbrokenNGExample */,
+				D56AEC31291746DC0068DEA9 /* isJailbrokenNGExampleTests */,
+				D56AEC3B291746DC0068DEA9 /* isJailbrokenNGExampleUITests */,
+				D56AEBF5291742130068DEA9 /* Products */,
+				D56AEC49291747270068DEA9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D56AEBF5291742130068DEA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEBF4291742130068DEA9 /* isJailbrokenNG.framework */,
+				D56AEBFE291742130068DEA9 /* isJailbrokenNGTests.xctest */,
+				D56AEC14291746DA0068DEA9 /* isJailbrokenNGExample.app */,
+				D56AEC2E291746DC0068DEA9 /* isJailbrokenNGExampleTests.xctest */,
+				D56AEC38291746DC0068DEA9 /* isJailbrokenNGExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D56AEBF6291742130068DEA9 /* isJailbrokenNG */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEBF7291742130068DEA9 /* isJailbrokenNG.h */,
+				D56AEBF8291742130068DEA9 /* isJailbrokenNG.docc */,
+				D56AEC0E291742440068DEA9 /* isJailbrokenNG.m */,
+			);
+			path = isJailbrokenNG;
+			sourceTree = "<group>";
+		};
+		D56AEC02291742130068DEA9 /* isJailbrokenNGTests */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEC03291742130068DEA9 /* isJailbrokenNGTests.m */,
+			);
+			path = isJailbrokenNGTests;
+			sourceTree = "<group>";
+		};
+		D56AEC15291746DA0068DEA9 /* isJailbrokenNGExample */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEC16291746DA0068DEA9 /* AppDelegate.h */,
+				D56AEC17291746DA0068DEA9 /* AppDelegate.m */,
+				D56AEC19291746DA0068DEA9 /* SceneDelegate.h */,
+				D56AEC1A291746DA0068DEA9 /* SceneDelegate.m */,
+				D56AEC1C291746DA0068DEA9 /* ViewController.h */,
+				D56AEC1D291746DA0068DEA9 /* ViewController.m */,
+				D56AEC1F291746DA0068DEA9 /* Main.storyboard */,
+				D56AEC22291746DC0068DEA9 /* Assets.xcassets */,
+				D56AEC24291746DC0068DEA9 /* LaunchScreen.storyboard */,
+				D56AEC27291746DC0068DEA9 /* Info.plist */,
+				D56AEC28291746DC0068DEA9 /* main.m */,
+			);
+			path = isJailbrokenNGExample;
+			sourceTree = "<group>";
+		};
+		D56AEC31291746DC0068DEA9 /* isJailbrokenNGExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEC32291746DC0068DEA9 /* isJailbrokenNGExampleTests.m */,
+			);
+			path = isJailbrokenNGExampleTests;
+			sourceTree = "<group>";
+		};
+		D56AEC3B291746DC0068DEA9 /* isJailbrokenNGExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D56AEC3C291746DC0068DEA9 /* isJailbrokenNGExampleUITests.m */,
+				D56AEC3E291746DC0068DEA9 /* isJailbrokenNGExampleUITestsLaunchTests.m */,
+			);
+			path = isJailbrokenNGExampleUITests;
+			sourceTree = "<group>";
+		};
+		D56AEC49291747270068DEA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D56AEBEF291742130068DEA9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC05291742130068DEA9 /* isJailbrokenNG.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D56AEBF3291742130068DEA9 /* isJailbrokenNG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56AEC08291742130068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNG" */;
+			buildPhases = (
+				D56AEBEF291742130068DEA9 /* Headers */,
+				D56AEBF0291742130068DEA9 /* Sources */,
+				D56AEBF1291742130068DEA9 /* Frameworks */,
+				D56AEBF2291742130068DEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = isJailbrokenNG;
+			productName = isJailbrokenNG;
+			productReference = D56AEBF4291742130068DEA9 /* isJailbrokenNG.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D56AEBFD291742130068DEA9 /* isJailbrokenNGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56AEC0B291742130068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGTests" */;
+			buildPhases = (
+				D56AEBFA291742130068DEA9 /* Sources */,
+				D56AEBFB291742130068DEA9 /* Frameworks */,
+				D56AEBFC291742130068DEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D56AEC01291742130068DEA9 /* PBXTargetDependency */,
+			);
+			name = isJailbrokenNGTests;
+			productName = isJailbrokenNGTests;
+			productReference = D56AEBFE291742130068DEA9 /* isJailbrokenNGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D56AEC13291746DA0068DEA9 /* isJailbrokenNGExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56AEC40291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExample" */;
+			buildPhases = (
+				D56AEC10291746DA0068DEA9 /* Sources */,
+				D56AEC11291746DA0068DEA9 /* Frameworks */,
+				D56AEC12291746DA0068DEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = isJailbrokenNGExample;
+			productName = isJailbrokenNGExample;
+			productReference = D56AEC14291746DA0068DEA9 /* isJailbrokenNGExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D56AEC2D291746DC0068DEA9 /* isJailbrokenNGExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56AEC43291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExampleTests" */;
+			buildPhases = (
+				D56AEC2A291746DC0068DEA9 /* Sources */,
+				D56AEC2B291746DC0068DEA9 /* Frameworks */,
+				D56AEC2C291746DC0068DEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D56AEC30291746DC0068DEA9 /* PBXTargetDependency */,
+			);
+			name = isJailbrokenNGExampleTests;
+			productName = isJailbrokenNGExampleTests;
+			productReference = D56AEC2E291746DC0068DEA9 /* isJailbrokenNGExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D56AEC37291746DC0068DEA9 /* isJailbrokenNGExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56AEC46291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExampleUITests" */;
+			buildPhases = (
+				D56AEC34291746DC0068DEA9 /* Sources */,
+				D56AEC35291746DC0068DEA9 /* Frameworks */,
+				D56AEC36291746DC0068DEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D56AEC3A291746DC0068DEA9 /* PBXTargetDependency */,
+			);
+			name = isJailbrokenNGExampleUITests;
+			productName = isJailbrokenNGExampleUITests;
+			productReference = D56AEC38291746DC0068DEA9 /* isJailbrokenNGExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D56AEBEB291742130068DEA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					D56AEBF3291742130068DEA9 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					D56AEBFD291742130068DEA9 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					D56AEC13291746DA0068DEA9 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					D56AEC2D291746DC0068DEA9 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = D56AEC13291746DA0068DEA9;
+					};
+					D56AEC37291746DC0068DEA9 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = D56AEC13291746DA0068DEA9;
+					};
+				};
+			};
+			buildConfigurationList = D56AEBEE291742130068DEA9 /* Build configuration list for PBXProject "isJailbrokenNG" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D56AEBEA291742130068DEA9;
+			productRefGroup = D56AEBF5291742130068DEA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D56AEBF3291742130068DEA9 /* isJailbrokenNG */,
+				D56AEBFD291742130068DEA9 /* isJailbrokenNGTests */,
+				D56AEC13291746DA0068DEA9 /* isJailbrokenNGExample */,
+				D56AEC2D291746DC0068DEA9 /* isJailbrokenNGExampleTests */,
+				D56AEC37291746DC0068DEA9 /* isJailbrokenNGExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D56AEBF2291742130068DEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEBFC291742130068DEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC12291746DA0068DEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC26291746DC0068DEA9 /* LaunchScreen.storyboard in Resources */,
+				D56AEC23291746DC0068DEA9 /* Assets.xcassets in Resources */,
+				D56AEC21291746DA0068DEA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC2C291746DC0068DEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC36291746DC0068DEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D56AEBF0291742130068DEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEBF9291742130068DEA9 /* isJailbrokenNG.docc in Sources */,
+				D56AEC0F291742440068DEA9 /* isJailbrokenNG.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEBFA291742130068DEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC04291742130068DEA9 /* isJailbrokenNGTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC10291746DA0068DEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC1E291746DA0068DEA9 /* ViewController.m in Sources */,
+				D56AEC18291746DA0068DEA9 /* AppDelegate.m in Sources */,
+				D56AEC29291746DC0068DEA9 /* main.m in Sources */,
+				D56AEC1B291746DA0068DEA9 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC2A291746DC0068DEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC33291746DC0068DEA9 /* isJailbrokenNGExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56AEC34291746DC0068DEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56AEC3D291746DC0068DEA9 /* isJailbrokenNGExampleUITests.m in Sources */,
+				D56AEC3F291746DC0068DEA9 /* isJailbrokenNGExampleUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D56AEC01291742130068DEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56AEBF3291742130068DEA9 /* isJailbrokenNG */;
+			targetProxy = D56AEC00291742130068DEA9 /* PBXContainerItemProxy */;
+		};
+		D56AEC30291746DC0068DEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56AEC13291746DA0068DEA9 /* isJailbrokenNGExample */;
+			targetProxy = D56AEC2F291746DC0068DEA9 /* PBXContainerItemProxy */;
+		};
+		D56AEC3A291746DC0068DEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56AEC13291746DA0068DEA9 /* isJailbrokenNGExample */;
+			targetProxy = D56AEC39291746DC0068DEA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D56AEC1F291746DA0068DEA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D56AEC20291746DA0068DEA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D56AEC24291746DC0068DEA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D56AEC25291746DC0068DEA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D56AEC06291742130068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D56AEC07291742130068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D56AEC09291742130068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNG;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D56AEC0A291742130068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNG;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D56AEC0C291742130068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D56AEC0D291742130068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D56AEC41291746DC0068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = isJailbrokenNGExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D56AEC42291746DC0068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = isJailbrokenNGExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D56AEC44291746DC0068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/isJailbrokenNGExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/isJailbrokenNGExample";
+			};
+			name = Debug;
+		};
+		D56AEC45291746DC0068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/isJailbrokenNGExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/isJailbrokenNGExample";
+			};
+			name = Release;
+		};
+		D56AEC47291746DC0068DEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = isJailbrokenNGExample;
+			};
+			name = Debug;
+		};
+		D56AEC48291746DC0068DEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6RB25ZNB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avltree9798.isJailbrokenNGExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = isJailbrokenNGExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D56AEBEE291742130068DEA9 /* Build configuration list for PBXProject "isJailbrokenNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC06291742130068DEA9 /* Debug */,
+				D56AEC07291742130068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56AEC08291742130068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC09291742130068DEA9 /* Debug */,
+				D56AEC0A291742130068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56AEC0B291742130068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC0C291742130068DEA9 /* Debug */,
+				D56AEC0D291742130068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56AEC40291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC41291746DC0068DEA9 /* Debug */,
+				D56AEC42291746DC0068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56AEC43291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC44291746DC0068DEA9 /* Debug */,
+				D56AEC45291746DC0068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56AEC46291746DC0068DEA9 /* Build configuration list for PBXNativeTarget "isJailbrokenNGExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56AEC47291746DC0068DEA9 /* Debug */,
+				D56AEC48291746DC0068DEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D56AEBEB291742130068DEA9 /* Project object */;
+}
