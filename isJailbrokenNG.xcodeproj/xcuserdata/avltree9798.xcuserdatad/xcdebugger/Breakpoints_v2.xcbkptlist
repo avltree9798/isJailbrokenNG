@@ -14,8 +14,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
             <Locations>
@@ -78,8 +78,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "isJailbroken(terminate_if_true)"
             landmarkType = "9">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
             <Locations>
@@ -174,8 +174,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "checkPorts(main_queue, terminate_if_found)"
             landmarkType = "9">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "jailbreak_artifact_exists(main_queue, terminate_if_exists)"
             landmarkType = "9">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "jailbreak_artifact_exists(main_queue, terminate_if_exists)"
             landmarkType = "9">
             <Locations>
@@ -272,6 +272,21 @@
                   endingLineNumber = "193"
                   offsetFromSymbolStart = "236">
                </Location>
+               <Location
+                  uuid = "A7D8F24B-9C27-405D-88CC-18401FF23DC8 - b7f48b65a8714273"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jailbreak_artifact_exists"
+                  moduleName = "isJailbrokenNG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avltree9798/sec/isJailbrokenNG/isJailbrokenNG/isJailbrokenNG.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "288">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -285,8 +300,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "jailbreak_artifact_exists(main_queue, terminate_if_exists)"
             landmarkType = "9">
          </BreakpointContent>
@@ -301,8 +316,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "checkDylib(main_queue, terminate_if_exists)"
             landmarkType = "9">
             <Locations>
@@ -349,8 +364,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "checkDylib(main_queue, terminate_if_exists)"
             landmarkType = "9">
          </BreakpointContent>
@@ -365,8 +380,8 @@
             filePath = "isJailbrokenNG/isJailbrokenNG.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "checkDylib(main_queue, terminate_if_exists)"
             landmarkType = "9">
             <Locations>
@@ -401,6 +416,38 @@
                   offsetFromSymbolStart = "340">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0087406C-6623-4ED6-9125-2BC72B86E7B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "isJailbrokenNG/isJailbrokenNG.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "jailbreak_artifact_exists(main_queue, terminate_if_exists)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B2CCAD-08FC-485A-8DC2-7705FD5FEE4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "isJailbrokenNG/isJailbrokenNG.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -20,13 +20,30 @@
 #include <stdbool.h>
 #include <mach-o/dyld.h>
 
+const int FUNCTION_OFFSET = 513;
+
+
+
+
+__attribute__((always_inline))  int* hide_function_address(int* function) {
+    HIDE_CODE;
+    return function-FUNCTION_OFFSET;
+}
+
+__attribute__((always_inline))  int* get_real_function_address(int* function){
+    HIDE_CODE;
+    return function+FUNCTION_OFFSET;
+}
+
 __attribute__((always_inline)) const char* match(const char* X, const char* Y)
 {
     HIDE_CODE;
     if (*Y == '\0')
         return X;
-
-    for (int i = 0; i < strlen(X); i++)
+    
+    int* fake_strlen = hide_function_address((int*) strlen);
+    unsigned long (*real_strlen)(const char*) = (unsigned long(*)(const char*)) get_real_function_address(fake_strlen);
+    for (int i = 0; i < real_strlen(X); i++)
     {
         if (*(X + i) == *Y)
         {
@@ -38,17 +55,7 @@ __attribute__((always_inline)) const char* match(const char* X, const char* Y)
     return NULL;
 }
 
-__attribute__((always_inline)) int* hide_function_address(int* function) {
-    HIDE_CODE;
-    return function-10;
-}
-
-__attribute__((always_inline)) int* get_real_function_address(int* function){
-    HIDE_CODE;
-    return function+10;
-}
-
-__attribute__((always_inline)) char *randstring(int length) {
+__attribute__((always_inline))  char *randstring(int length) {
     HIDE_CODE;
     char *string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";
     size_t stringLen = 26*2+10+7;
@@ -72,7 +79,7 @@ __attribute__((always_inline)) char *randstring(int length) {
     return randomString;
 }
 
-__attribute__((always_inline)) void checkPorts(dispatch_queue_t main_queue, bool terminate_if_found){
+__attribute__((optnone)) void checkPorts(dispatch_queue_t main_queue, bool terminate_if_found){
     HIDE_CODE;
     int* fake_socket = hide_function_address((int*)socket);
     int* fake_memset = hide_function_address((int*)memset);
@@ -84,6 +91,8 @@ __attribute__((always_inline)) void checkPorts(dispatch_queue_t main_queue, bool
     int(*real_connect)(int, const struct sockaddr*, socklen_t) = (int(*)(int, const struct sockaddr*, socklen_t))get_real_function_address(fake_connect);
     int(*real_strcmp)(const char*, const char*) = (int(*)(const char*, const char*))get_real_function_address(fake_strcmp);
 
+    int* fake_sleep = hide_function_address((int*) sleep);
+    int (*real_sleep)(unsigned int) = (int(*)(unsigned int)) get_real_function_address(fake_sleep);
     
     
     int sockfd,flag;
@@ -142,7 +151,7 @@ __attribute__((always_inline)) void checkPorts(dispatch_queue_t main_queue, bool
                 }
             }
         }
-        sleep(60); // avoid resource hogging
+        real_sleep(60); // avoid resource hogging
     }
 dirty:
     if (terminate_if_found) {
@@ -153,8 +162,10 @@ dirty:
     }
 }
 
-__attribute__((always_inline)) void antiDebug(){
+__attribute__((optnone))  void antiDebug(){
     HIDE_CODE;
+    int* fake_sleep = hide_function_address((int*) sleep);
+    int (*real_sleep)(unsigned int) = (int(*)(unsigned int)) get_real_function_address(fake_sleep);
     while(1) {
         __asm(
             "mov x20,x0\n"
@@ -181,15 +192,19 @@ __attribute__((always_inline)) void antiDebug(){
             "mov x23,#0\n"
             "mov x24,#0\n"
         );
-        sleep(60);
+        real_sleep(60);
     }
 }
 
-__attribute__((always_inline)) int jailbreak_artifact_exists(dispatch_queue_t main_queue, bool terminate_if_exists) {
+__attribute__((optnone))  int jailbreak_artifact_exists(dispatch_queue_t main_queue, bool terminate_if_exists) {
     HIDE_CODE;
     
     int* fake_stat = hide_function_address((int*)stat);
     int(*real_stat)(const char*, struct stat*) = (int(*)(const char*, struct stat*))get_real_function_address(fake_stat);
+    
+    int* fake_sleep = hide_function_address((int*) sleep);
+    int (*real_sleep)(unsigned int) = (int(*)(unsigned int)) get_real_function_address(fake_sleep);
+    
     unsigned mlen = 0x1000;
     char *cArr = (char *)calloc(mlen,sizeof(char));
     BZ2_bzBuffToBuffDecompress(cArr,&mlen,(char *)strzip,sizeof(strzip),0,0);
@@ -198,21 +213,26 @@ __attribute__((always_inline)) int jailbreak_artifact_exists(dispatch_queue_t ma
         for(i=0;i<37;++i) {
             char* file = &cArr[i*64];
             struct stat st;
-            if (real_stat(file,&st)) {
+            if (real_stat(file,&st) == 0) {
+#if DEBUG
                 NSLog(@"[+] Found file %s\n", file);
+#endif
                 if (terminate_if_exists) {
                     EXIT;
                 }
             }
         }
-        sleep(60);
+        real_sleep(60);
     }
 }
 
-__attribute__((always_inline)) void checkDylib(dispatch_queue_t main_queue, bool terminate_if_exists){
+__attribute__((optnone)) void checkDylib(dispatch_queue_t main_queue, bool terminate_if_exists){
     HIDE_CODE;
     int* fake_dyld_get_image_name = hide_function_address((int*)_dyld_get_image_name);
     const char* (*real_dyld_get_image_name)(uint32_t) = (const char*(*)(uint32_t))get_real_function_address(fake_dyld_get_image_name);
+    
+    int* fake_match = hide_function_address((int*)match);
+    const char (*real_match)(const char*, const char*) = (const char (*)(const char*, const char*))get_real_function_address(fake_match);
     unsigned mlen = 0x1000;
     char *cArr = (char *)calloc(mlen,sizeof(char));
     BZ2_bzBuffToBuffDecompress(cArr,&mlen,(char *)strzip,sizeof(strzip),0,0);
@@ -223,9 +243,11 @@ __attribute__((always_inline)) void checkDylib(dispatch_queue_t main_queue, bool
             else{
                 for(int j=38;j<45;j++){
                     char* dylib_name = &cArr[j*64];
-                    if(match(name, dylib_name) != NULL)
+                    if(real_match(name, dylib_name) != NULL)
                     {
+#if DEBUG
                         NSLog(@"[+] Found dylib %s\n", name);
+#endif
                         if (terminate_if_exists) {
                             EXIT;
                         }
@@ -238,9 +260,8 @@ __attribute__((always_inline)) void checkDylib(dispatch_queue_t main_queue, bool
 }
 
 
-__attribute__((always_inline)) void isJailbroken(bool terminate_if_true){
+__attribute__((optnone))  void isJailbroken(bool terminate_if_true){
     HIDE_CODE;
-    srand(time(NULL));
     
     int* fake_dispatch_queue_create = hide_function_address((int*) dispatch_queue_create);
     dispatch_queue_t (*real_dispatch_queue_create)(const char*, dispatch_queue_attr_t) = (dispatch_queue_t (*)(const char*, dispatch_queue_attr_t))get_real_function_address(fake_dispatch_queue_create);
@@ -260,6 +281,9 @@ __attribute__((always_inline)) void isJailbroken(bool terminate_if_true){
     
     int* fake_checkDylib = hide_function_address((int*) checkDylib);
     void(*real_checkDylib)(dispatch_queue_t, bool) = (void(*)(dispatch_queue_t, bool))get_real_function_address(fake_checkDylib);
+    
+    int* fake_sleep = hide_function_address((int*) sleep);
+    int (*real_sleep)(unsigned int) = (int(*)(unsigned int)) get_real_function_address(fake_sleep);
     
     int key_length = (rand() % (10 - 5 + 1)) + 5;
     char* queue_name = randstring(key_length);
@@ -290,7 +314,7 @@ __attribute__((always_inline)) void isJailbroken(bool terminate_if_true){
     queue_name = randstring(key_length);
     dispatch_queue_t port_checking_thread = real_dispatch_queue_create(queue_name, NULL);
     real_dispatch_async(port_checking_thread, ^{
-        sleep(2);
+        real_sleep(2);
         real_checkPorts(main_queue, terminate_if_true);
     });
     
