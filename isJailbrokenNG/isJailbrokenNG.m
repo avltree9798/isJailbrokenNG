@@ -253,7 +253,7 @@ __attribute__((always_inline)) void isJailbroken(bool terminate_if_true){
     void(*real_dispatch_async)(dispatch_queue_t, void(^block)(void)) = (void(*)(dispatch_queue_t, void(^block)(void)))get_real_function_address(fake_dispatch_async);
     
     int* fake_antiDebug = hide_function_address((int*) antiDebug);
-    void (*real_antiDebug)() = (void(*))get_real_function_address(fake_antiDebug);
+    void (*real_antiDebug)(void) = (void(*))get_real_function_address(fake_antiDebug);
     
     
     int* fake_jailbreak_artifact_exists = hide_function_address((int*) jailbreak_artifact_exists);
